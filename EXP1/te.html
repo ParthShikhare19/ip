@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #dbeafe, #f0f9ff);
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1e3a8a;
+            margin-top: 40px;
+            font-size: 2.5em;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #1f2937;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="date"],
+        select {
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            font-size: 1em;
+            transition: border 0.3s ease;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #2563eb;
+            outline: none;
+        }
+
+        .radio-group {
+            margin-bottom: 20px;
+        }
+
+        .radio-group label {
+            font-weight: normal;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+
+        .radio-group input {
+            margin-right: 5px;
+        }
+
+        button {
+            padding: 12px;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #1e40af;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .back-link a {
+            text-decoration: none;
+        }
+
+        .back-link button {
+            background-color: #6b7280;
+        }
+
+        .back-link button:hover {
+            background-color: #4b5563;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Details Form</h1>
+
+    <form action="submit">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label>Department:</label>
+        <div class="radio-group">
+            <input type="radio" id="comps" name="fav_language" value="COMPS">
+            <label for="comps">COMPS</label>
+
+            <input type="radio" id="it" name="fav_language" value="IT">
+            <label for="it">IT</label>
+
+            <input type="radio" id="extc" name="fav_language" value="EXTC">
+            <label for="extc">EXTC</label>
+
+            <input type="radio" id="mech" name="fav_language" value="MECH">
+            <label for="mech">MECH</label>
+        </div>
+
+        <label for="password">Roll No:</label>
+        <input type="text" id="password" name="password" required>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob">
+
+        <label for="gender">Gender</label>
+        <select name="gender_opt" id="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <div class="back-link">
+        <a href="./profile.html"><button>Go Back</button></a>
+    </div>
+
+    <script src="./te-validation.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DBIT</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #e0f2fe, #f8fafc);
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+      letter-spacing: 1.2px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .banner {
+      background: #1e40af;
+      color: #fff;
+      padding: 10px 0;
+      text-align: center;
+      font-weight: 500;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .banner span {
+      display: inline-block;
+      white-space: nowrap;
+      padding-left: 100%;
+      animation: slide 12s linear infinite;
+    }
+
+    @keyframes slide {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .intro-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-bottom: 50px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      backdrop-filter: blur(8px);
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    .image-container {
+      flex: 1 1 300px;
+      max-width: 300px;
+    }
+
+    .image-container img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .info-text {
+      flex: 2 1 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .info-text h2 {
+      margin: 0 0 10px;
+      color: #1d4ed8;
+      font-size: 2.2rem;
+    }
+
+    section {
+      background: #ffffff;
+      margin-bottom: 40px;
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+      animation: fadeInUp 1s ease;
+    }
+
+    section h2 {
+      color: #1e3a8a;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+    }
+
+    ul {
+      list-style: disc;
+      margin-left: 20px;
+      padding: 0;
+    }
+
+    ul li {
+      margin-bottom: 12px;
+      font-size: 1.05rem;
+    }
+
+    a {
+      color: #2563eb;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: #1e40af;
+      text-decoration: underline;
+    }
+
+    footer {
+      background: #1f2937;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 40px;
+      font-size: 0.95rem;
+    }
+
+    footer p {
+      margin: 6px 0;
+    }
+
+    footer a {
+      color: #93c5fd;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    footer a:hover {
+      color: #bfdbfe;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .intro-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .image-container {
+        max-width: 100%;
+      }
+
+      .info-text {
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      section {
+        padding: 20px;
+      }
+
+      .info-text h2 {
+        font-size: 1.7rem;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Don Bosco Institute of Technology</h1>
+  </header>
+
+  <div class="banner">
+    <span>Department of Information Technology</span>
+  </div>
+
+  <main>
+    <section class="intro-section">
+      <div class="image-container">
+        <img src="profile.jpeg" alt="DBIT Campus Image" />
+      </div>
+      <div class="info-text">
+        <h2>Parth Shikhare</h2>
+        <p>
+          I am Parth Shikhare, currently pursuing a B.Tech degree at Don Bosco Institute of Technology in the Information Technology Department.
+        </p>
+      </div>
+    </section>
+
+    <section class="achievements-section">
+      <h2>Achievements</h2>
+      <ul>
+        <li>Awarded "Best Engineering College in Innovation" for three consecutive years.</li>
+        <li>Our students consistently secure top ranks in university examinations.</li>
+        <li>Numerous alumni hold leadership positions in renowned multinational corporations.</li>
+        <li>Successful completion of various research projects with industry partners.</li>
+        <li>Strong track record in inter-collegiate technical competitions.</li>
+      </ul>
+    </section>
+
+    <section class="academics-section">
+      <h2>Academics</h2>
+      <ul>
+        <li><a href="./se.html">SE</a></li>
+        <li><a href="./te.html">TE</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Email: <a href="mailto:info@dbit.edu">info@dbit.edu</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/school/dbit/" target="_blank">DBIT LinkedIn Page</a></p>
+    <p>Phone: +91 12345 67890</p>
+    <p>&copy; 2025 DBIT. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+        margin: 0;
+        padding: 0;
+      }
+
+      h1,
+      h2,
+      h3 {
+        text-align: center;
+        padding: 5px;
+        margin: 5px 0;
+      }
+
+      form {
+        max-width: 500px;
+        margin: 30px auto;
+        padding: 20px;
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="number"],
+      input[type="tel"],
+      input[type="password"],
+      textarea,
+      select {
+        width: 95%;
+        padding: 10px;
+        margin: 8px 0 15px 0;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 14px;
+        transition: 0.3s;
+      }
+
+      input:hover,
+      select:hover {
+        border-color: #2196f3;
+      }
+      input:focus,
+      select:focus {
+        outline: none;
+        border-color: #1976d2;
+        box-shadow: 0 0 6px rgba(25, 118, 210, 0.4);
+      }
+
+      label {
+        display: inline-block;
+        margin-bottom: 6px;
+        font-weight: bold;
+      }
+
+      .inline-options {
+        margin-bottom: 15px;
+      }
+      .inline-options input {
+        margin-right: 6px;
+      }
+      .inline-options label {
+        margin-right: 15px;
+        font-weight: normal;
+      }
+
+      button {
+        padding: 10px 20px;
+        margin: 10px 8px 0 0;
+        border: none;
+        border-radius: 8px;
+        font-size: 15px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      button[type="submit"] {
+        background: #2196f3;
+        color: white;
+      }
+
+      button[type="submit"]:hover {
+        background: #1976d2;
+      }
+
+      button[type="reset"] {
+        background: #f44336;
+        color: white;
+      }
+
+      button[type="reset"]:hover {
+        background: #d32f2f;
+      }
+    </style>
+    
+  </head>
+  <body>
+    <h1>Don Bosco Institue of Technology</h1>
+    <h3>Department of Information Technology</h3>
+    <h2>TE Form</h2>
+
+    <form id="myForm">
+      <label>Username :</label>
+      <input
+        type="text"
+        name="name"
+        placeholder="Enter your username"
+        required
+      /><br />
+
+      <label>Password :</label>
+      <input
+        type="password"
+        name="password"
+        placeholder="Enter your password"
+        required
+      /><br />
+
+      <label>Phone No. :</label>
+      <input
+        type="tel"
+        name="tel"
+        placeholder="Enter your phone number"
+        required
+      /><br />
+
+      <label>Address :</label>
+      <textarea name="Address" id="Address" placeholder="Enter your address"></textarea>
+
+      <label>Age :</label>
+      <input type="number" name="age" required /><br />
+
+      <div class="inline-options">
+        <label>Gender :</label>
+        <input type="radio" name="Gender" /> Male
+        <input type="radio" name="Gender" /> Female
+      </div>
+
+      <div class="inline-options">
+        <label>Hobbies :</label>
+        <input type="checkbox" name="hobby" /> Sports
+        <input type="checkbox" name="hobby" /> Reading
+        <input type="checkbox" name="hobby" /> Music
+      </div>
+
+      <label>Technology :</label>
+      <select name="Technology">
+        <option value="Java">Java</option>
+        <option value="C">C</option>
+        <option value="Python">Python</option></select
+      ><br />
+
+      <label>Personal Information :</label>
+      <textarea name="info" id="info" placeholder="Enter your personal information"></textarea>
+
+      <button type="submit">Submit</button>
+      <button type="reset" id="cancelBtn">Cancel</button>
+    </form>
+
+    <script>
+      document.getElementById("myForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+        let username = document.getElementsByName("name")[0].value;
+        let password = document.getElementsByName("password")[0].value;
+        let phone = document.getElementsByName("tel")[0].value;
+        let age = document.getElementsByName("age")[0].value;
+        let nameRegex = /^[A-Za-z]+$/;
+        if (!nameRegex.test(username)) {
+          alert("Username should not contain numbers");
+          return;
+        }
+        if (password.length < 8) {
+          alert("Password should be at least 8 characters long");
+          return;
+        }
+        if (age < 8 || age > 80) {
+          alert("Age should be between 8 and 80");
+          return;
+        }
+        let phoneRegex = /^[0-9]{10}$/;
+        if (!phoneRegex.test(phone)) {
+          alert("Phone number should contain exactly 10 digits");
+          return;
+        }
+        let pname = prompt("Enter your name");
+        if (pname !== null) {
+          let conf = confirm("Do you want to submit?");
+          if (conf) {
+            alert("Confirm Successful");
+          }
+        }
+      });
+
+      document.getElementById("cancelBtn").addEventListener("click", function (e) {
+        e.preventDefault();
+        let pname = prompt("Enter your name");
+        if (pname !== null) {
+          let conf = confirm("Do you want to cancel?");
+          if (conf) {
+            alert("Cancel Successful");
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
