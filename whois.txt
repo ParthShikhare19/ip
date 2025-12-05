@@ -1,0 +1,61 @@
+17 — WHOIS, dig, traceroute, nslookup (examples & explanation)
+
+These are standard tools for domain and network diagnostics. Example commands with short explanations:
+
+WHOIS
+
+Query domain registration metadata.
+
+whois example.com
+
+
+Output includes registrar, creation/expiry, name servers, and registrant contact details (varies by TLD/registrar and redaction/privacy).
+
+dig
+
+DNS lookups; very flexible.
+
+# Get A records (short)
+dig +short example.com A
+
+# Get MX records
+dig example.com MX
+
+# Full query with authoritative answer section
+dig example.com ANY
+
+
++short gives just concise answers (IPs, mail servers).
+
+@ lets you query a specific DNS server: dig @8.8.8.8 example.com A.
+
+traceroute / tracert
+
+Show path packets take from you to target.
+
+# Linux/macOS
+traceroute example.com
+
+# Windows
+tracert example.com
+
+
+Output: list of hops with round-trip times. Some hops may show * if requests timed out or ICMP blocked.
+
+nslookup
+
+Interactive or single-shot DNS queries.
+
+# Single query for MX
+nslookup -type=MX example.com
+
+# Interactive mode
+nslookup
+> server 8.8.8.8> set type=TXT
+> example.com
+Useful dig examples for debugging DNS propagation
+bash
+Copy code
+# Query authoritative nameserver(s) directly (find NS first)
+dig example.com NS +short
+dig @ns1.somedns.example example.com A +short
